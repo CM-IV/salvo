@@ -230,9 +230,7 @@ impl_to_schema_primitive!(
     time::Duration
 );
 #[cfg(feature = "jiff")]
-impl_to_schema_primitive!(
-    jiff::Timestamp
-);
+impl_to_schema_primitive!(jiff::Timestamp);
 #[cfg(feature = "smallvec")]
 impl<T: ToSchema + smallvec::Array> ToSchema for smallvec::SmallVec<T> {
     fn to_schema(components: &mut Components) -> RefOr<schema::Schema> {
