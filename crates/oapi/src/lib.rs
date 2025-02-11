@@ -159,7 +159,7 @@ macro_rules! impl_to_schema {
     };
     (@impl_schema $($tt:tt)*) => {
         impl ToSchema for $($tt)* {
-            fn to_schema(_components: &mut Components) -> crate::RefOr<crate::schema::Schema> {
+            fn to_schema(components: &mut Components) -> crate::RefOr<crate::schema::Schema> {
                  schema!( $($tt)* ).into()
             }
         }
